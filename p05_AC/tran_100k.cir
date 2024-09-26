@@ -1,0 +1,13 @@
+* Tran SS analysis (100k)-  SPICE
+
+V1 1 0 SIN(0 5 100k)
+L 1 2 159u IC=0
+C 2 3 1.6p IC=0
+R1 3 0 100
+
+.tran 0.1m uic
+
+.print V(3)
+.end
+
+

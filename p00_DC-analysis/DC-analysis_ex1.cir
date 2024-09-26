@@ -1,0 +1,18 @@
+* DC analysis - SPICE
+
+V1 1 0 10M
+R1 1 2 1.5K
+R2 2 0 500
+I1 2 0 5U
+
+* circuit analysis
+.OP
+* or
+*.DC V1 10M 10M 1
+
+*Saving the data
+.PRINT V(1) V(2) I(R2)
+
+.END
+
+

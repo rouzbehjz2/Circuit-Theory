@@ -1,0 +1,25 @@
+* OPAMP - SPICE
+
+Vi 1 0 2
+Rs 1 in_N 50
+Rf in_N out 150
+RL out 0 20
+
+* call to the OPAMP model
+XOA1 0 in_N out OPAMP
+
+* Circuit analysis
+.OP
+
+*saving the data
+.PRINT V(1,0) V(out)
+
+* OPAMP equivalent
+.SUBCKT OPAMP P N O
+RI P N 2MEG
+E1 1 0 P N 200k
+Ro 1 O 75
+.ENDS OPAMP
+
+.END
+

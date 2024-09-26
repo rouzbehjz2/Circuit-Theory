@@ -1,0 +1,16 @@
+* First Order UIC - SPICE
+
+V1 1 0 2
+R1 1 3 1
+
+R2 3 4 2
+C1 4 0 1 IC=3V
+R3 3 5 3
+V2 5 0 3
+
+
+.TRAN 25 UIC
+.print V(4)
+.end
+
+

@@ -1,0 +1,27 @@
+* Audio Filter - Transfer function
+
+Vi 1 0 AC 1
+R1 1 2 1.5k
+L1 2 in_N 0.796
+
+* call to the OPAMP model
+XOA1 0 in_N out OPAMP
+
+R2 in_N out 3k
+C1 in_N out 177n
+
+* Circuit analysis
+.AC dec 1k 0.1 10Meg
+
+*saving the data
+.PRINT V(out)
+
+* OPAMP equivalent
+.SUBCKT OPAMP P N O
+RI P N 2MEG
+E1 1 0 P N 200k
+Ro 1 O 75
+.ENDS OPAMP
+
+.END
+

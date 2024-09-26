@@ -1,0 +1,21 @@
+* Controlled Source and Req - SPICE
+
+VT 1 0 1
+R1 1 0 1k
+R2 1 2 500
+
+* Fake source for ix
+Vix 2 3 0
+R3 3 0 1k
+
+* CCCS
+F1 0 3 Vix 2
+
+* Circuit analysis
+.OP
+
+*saving the data
+.PRINT V(1) I(VT)
+
+.END
+

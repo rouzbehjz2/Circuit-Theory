@@ -1,0 +1,13 @@
+* Tran SS analysis (10M) - SPICE
+
+V1 1 0 SIN(0 5 10Meg)
+L 1 2 159u IC=0
+C 2 3 1.6p IC=0
+R1 3 0 100
+
+.tran 1n 50u 0 0.1n uic
+
+.print V(3) 
+.end
+
+

@@ -1,0 +1,23 @@
+* First Order - SPICE
+
+.model MySwitch SW (Ron = 1m, Roff=1G, Vt=0, Vh = 0)
+
+V1 1 0 DC 2
+R1 1 2 1
+
+S1 2 3 c1 0 MySwitch
+R2 3 4 2
+C1 4 0 1
+R3 3 5 3
+V2 5 0 DC 3
+
+
+* switch control
+V3 c1 0 PWL(0 0 4.9 0 5 1)
+*V3 c1 0 pulse(0 1 5 1m 1m 30 30)
+
+.TRAN 30
+.print V(4) V(c1) I(S1)
+.end
+
+

@@ -1,0 +1,33 @@
+* Second Order - SPICE
+
+* lossless
+Vil 1l 0 1
+R1l 1l 2l 0.001m
+L1l 2l 3l 1 IC=0
+C1l 3l 0 1 IC=0
+
+* underdamped
+Viu 1u 0 1
+R1u 1u 2u 0.5
+L1u 2u 3u 1 IC=0
+C1u 3u 0 1 IC=0
+
+* overdumped
+Vio 1o 0 1
+R1o 1o 2o 5
+L1o 2o 3o 1 IC=0
+C1o 3o 0 1 IC=0
+
+* critical
+Vic 1c 0 1
+R1c 1c 2c 2
+L1c 2c 3c 1 IC=0
+C1c 3c 0 1 IC=0
+
+* Circuit analysis
+.TRAN 20 UIC
+
+*saving the data
+.PRINT V(3l) V(3u) V(3o) V(3c)
+.END
+

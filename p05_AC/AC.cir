@@ -1,0 +1,13 @@
+* AC analysis - SPICE
+
+V1 1 0 AC 1
+L 1 2 159u
+C 2 3 1.6p
+R1 3 0 100
+
+.AC dec 1K 1K 500Meg
+
+.print V(3)
+.end
+
+
